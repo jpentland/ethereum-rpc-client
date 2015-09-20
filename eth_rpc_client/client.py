@@ -166,3 +166,10 @@ class Client(object):
         """
         response = self.make_rpc_request("eth_accounts", [])
         return response['result']
+
+    def compile_solidity(self, code):
+        """
+        https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_compileSolidity"
+        """
+        response = self.make_rpc_request("eth_compileSolidity", [code])
+        return response['result']
